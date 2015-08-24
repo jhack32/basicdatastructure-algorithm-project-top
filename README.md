@@ -55,3 +55,6 @@ You'll build a simple binary tree data structure from some arbitrary input and a
                 [4,5]
                 [2,4]
                 [4,3]
+
+
+**need to go over this section (Algorithms)**
