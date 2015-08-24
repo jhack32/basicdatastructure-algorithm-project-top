@@ -15,12 +15,12 @@ class Tree
   end
 
   def build_tree(array)
-    binary_tree_arr = Array.new
+    @binary_tree_arr = Array.new
 #sorting the array before it goes into the binary tree
     array.sort!
 #array goes into the create_node method and pushed into new array(binary_tree_arr)
-    array.each { |x| binary_tree_arr << create_nodes(@root, x) }
-    binary_tree_arr
+    array.each { |x| @binary_tree_arr << create_nodes(@root, x) }
+    @binary_tree_arr
   end
 
 #Method will create the node
@@ -92,6 +92,13 @@ class Tree
     end
   end
 
+#shows the tree created. 
+def show_tree(array)
+  puts ""
+  array.each do |x|
+    puts "#{x} value #{x.value if !x.nil?} #{x.left.value if !x.left.nil?} #{x.right.value if !x.right.nil?}"
+  end
+end
 end #End of BuildTree class
 
 array_sorted = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
@@ -103,3 +110,4 @@ btree_array = btree.build_tree(array_sorted)
 p btree.breadth_first_search(9)
 p btree.depth_first_search(4)
 p btree.dfs_rec(67)
+btree.show_tree(btree_array)
